@@ -474,7 +474,6 @@ HRESULT loadMesh()
 	pD3DXMtrlBuffer_Neptun->Release();
 	pD3DXMtrlBuffer_Uranus->Release();
 }
-
 HRESULT InitGeometry()
 {
 	if (loadMesh() == E_FAIL) {
@@ -520,7 +519,6 @@ VOID SetupProjectionMatrix()
 	D3DXMatrixPerspectiveFovLH(&matProj, D3DX_PI / 4, 1.0f, 1.0f, 500.0f);
 	direct3Device9->SetTransform(D3DTS_PROJECTION, &matProj);
 }
-
 VOID SetupMatrices()
 {
 	SetupWorldMatrix();
@@ -654,7 +652,6 @@ VOID UranusRender()
 		Mesh_Uranus->DrawSubset(i);
 	}
 }
-
 VOID Render()
 {
 	direct3Device9->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER,
@@ -685,7 +682,6 @@ VOID Render()
 
 	direct3Device9->Present(NULL, NULL, NULL, NULL);
 }
-
 VOID Cleanup()
 {
 	if (cubVertexBuffer)
@@ -721,7 +717,6 @@ VOID CleanDInput()
 	g_pDinmouse->Unacquire();
 	g_pDin->Release();
 }
-
 LRESULT WINAPI MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (msg)
@@ -735,7 +730,6 @@ LRESULT WINAPI MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 	return DefWindowProc(hWnd, msg, wParam, lParam);
 }
-
 VOID keyPress(HWND hWnd) {
 	if (g_Keystate[DIK_ESCAPE] & 0x80) {
 		PostMessage(hWnd, WM_DESTROY, 0, 0);
